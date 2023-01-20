@@ -1,0 +1,15 @@
+Homework1:
+
+Note: "answer: code used to find answer"
+
+1. iidfile string: docker build --help
+2. 3: step 1. run "docker run -it python:3.9 /bin/bash", this takes you to interactive terminal. Step 2. run "pip list".
+3. 20530: query=select count(*) from green_taxi_data where cast(lpep_pickup_datetime as date)='2019-01-15' and cast(lpep_dropoff_dat
+ etime as date)='2019-01-15'
+4. 2019-01-15: query=select max(trip_distance), lpep_pickup_datetime from green_taxi_data group by trip_distance, lpep_pickup_datetime or
+ der by max(trip_distance) desc limit 100
+5a. 2 passengers=1282: query= select count(1) from green_taxi_data where passenger_count=2 and cast(lpep_pickup_datetime as date)='2019-01-01'
+5b. 3 passengers=254: query= select count(1) from green_taxi_data where passenger_count=3 and cast(lpep_pickup_datetime as date)='2019-01-01'
+6. Long Island City/Queens Plaza: query=select b."Zone" from green_taxi_data a join zones b on a."DOLocationID" = b."LocationID" where a."PULocationID" in (
+ 7,8,179) order by a.tip_amount desc
+
